@@ -331,7 +331,7 @@ class CarInterface(CarInterfaceBase):
       ret.flags |= GMFlags.CC_LONG.value
       ret.safetyConfigs[0].safetyParam |= Panda.FLAG_GM_CC_LONG
       ret.radarUnavailable = True
-      ret.experimentalLongitudinalAvailable = False
+      ret.experimentalLongitudinalAvailable = True
       ret.minEnableSpeed = 24 * CV.MPH_TO_MS
       ret.openpilotLongitudinalControl = True
       ret.pcmCruise = False
