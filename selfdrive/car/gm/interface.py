@@ -143,8 +143,8 @@ class CarInterface(CarInterfaceBase):
 
     if candidate in (CAR.VOLT, CAR.VOLT_CC):
 #adding recommended code from nwordy
-        ret.networkLocation = NetworkLocation.fwdCamera
-    # removed  ret.safetyConfigs[0].safetyParam |= Panda.FLAG_GM_HW_CAM
+      ret.networkLocation = NetworkLocation.fwdCamera
+      ret.safetyConfigs[0].safetyParam |= Panda.FLAG_GM_HW_CAM
     #end recommendation 
       ret.minEnableSpeed = -1 if Params().get_bool("LowerVolt") else ret.minEnableSpeed
       ret.mass = 1607.
