@@ -267,14 +267,15 @@ static int gm_tx_hook(CANPacket_t *to_send) {
 static int gm_fwd_hook(int bus_num, int addr) {
 
   int bus_fwd = -1;
-
+/*
   if (gm_hw == GM_CAM) {
     if (bus_num == 0) {
       // block PSCMStatus; forwarded through openpilot to hide an alert from the camera
       bool is_pscm_msg = (addr == 0x184);
       if (!is_pscm_msg) {
         bus_fwd = 2;
-      }
+      } */ //nworby's recommendation Bus 128 is powertrain TX, for some reason we're sending 33 messages per second when it should only be sending a message when a speed change is requested
+//I wonder if it's being forwarded from bus 2 Sam can you go into panda/board/safety/safety_gm.h and replace the gm_fwd_hook bit with
     }
 
     if (bus_num == 2) {
